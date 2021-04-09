@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1300
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpBtnClicker", "RpBtnClicker\RpBtnClicker.csproj", "{D0A58F5A-4C1A-417B-9059-7898C2756469}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0A58F5A-4C1A-417B-9059-7898C2756469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A58F5A-4C1A-417B-9059-7898C2756469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A58F5A-4C1A-417B-9059-7898C2756469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A58F5A-4C1A-417B-9059-7898C2756469}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E1829A8-B234-459B-9DAF-B884FE4C16C8}
+	EndGlobalSection
+EndGlobal
