@@ -19,9 +19,9 @@ namespace RpBtnClicker
 			if (args.Length == 0)
 				throw new ApplicationException("first argument should be script file");
 
-			//Script script = CreateScript(args);
-			//SerializeScript(script);
-			Script script = LoadScript(args[0]);
+			Script script = CreateScript(args);
+			SerializeScript(script);
+			script = LoadScript(args[0]);
 			if (string.IsNullOrEmpty(script?.WindowTitle))
 				throw new ApplicationException("Script window title not defined");
 
@@ -40,6 +40,7 @@ namespace RpBtnClicker
 		{
 			JavaScriptSerializer js = new JavaScriptSerializer();
 			var jsonString = js.Serialize(script);
+			jsonString = JsonFormatter.FormatOutput(jsonString);
 			File.WriteAllText("runInstaller.json", jsonString);
 		}
 
