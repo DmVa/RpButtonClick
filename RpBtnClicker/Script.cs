@@ -8,7 +8,6 @@ namespace RpBtnClicker
 {
 	public class Script
 	{
-		public string Process { get; set; }
 		public string WindowTitle { get; set; }
 		public List<Step> Steps { get; set; }
 	}

@@ -8,6 +8,8 @@ namespace RpBtnClicker
 {
 	public enum Actions
 	{
-		Click
+		Click,
+		FindForm,
+		SetText,
 	}
 }

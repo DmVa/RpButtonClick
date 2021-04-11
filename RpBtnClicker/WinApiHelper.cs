@@ -15,6 +15,28 @@ namespace RpBtnClicker
 			int hwnd = WinApi.FindWindow(null, "Installer");
 			return (IntPtr)hwnd;
 		}
+		public static List<IntPtr> GetFormControls(IntPtr parent, string className, string title, List<Step> formSteps)
+		{
+			List<IntPtr> found = new List<IntPtr>();
+			int stepIdx = 0;
+			List<IntPtr> children = GetChildWindows(parent);
+			foreach (var childWindow in children)
+			{
+				var step = formSteps[stepIdx];
+				string windowClassName = GetClassName(childWindow);
+				if (windowClassName.ToUpper().Contains(step.ClassName.ToUpper()))
+				{
+					found.Add(childWindow);
+					stepIdx++;
+					if (found.Count == formSteps.Count)
+						break;
+				}
+			}
+
+			if (found.Count != formSteps.Count)
+				found = new List<IntPtr>();
+			return found;
+		}
 
 		public static IntPtr GetChildByClassNameAndTitle(IntPtr parent, string className, string title)
 		{
@@ -83,6 +105,8 @@ namespace RpBtnClicker
 			}
 			return result;
 		}
+
+	
 
 		private static bool EnumWindow(IntPtr handle, IntPtr pointer)
 		{

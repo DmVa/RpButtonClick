@@ -11,6 +11,9 @@ namespace RpBtnClicker
 	{
 		public const int BN_CLICKED = 245;
 		public const int WM_CLOSE = 16;
+		public const int WM_SETTEXT = 0x000C;
+		public const uint WM_LBUTTONDOWN = 0x0201;
+		public const uint WM_LBUTTONUP = 0x0202;
 
 		/// <summary>
 		/// The FindWindow API
@@ -30,7 +33,12 @@ namespace RpBtnClicker
 		/// <param name="lParam">second message parameter</param>
 		/// <returns></returns>
 		[DllImport("user32.dll", CharSet = CharSet.Auto)]
-		public static extern int SendMessage(int hWnd, int msg, int wParam, IntPtr lParam);
+		public static extern int SendMessage(int hWnd, uint msg, int wParam, IntPtr lParam);
+
+
+		// An overload of the SendMessage function, this time taking in a string as the lParam.
+		[DllImport("User32.dll")]
+		public static extern Int32 SendMessage(int hWnd, int Msg, int wParam, string lParam);
 
 		/// <summary>
 		/// The FindWindowEx API
